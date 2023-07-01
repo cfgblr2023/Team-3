@@ -1,11 +1,10 @@
-import express from 'express';
-
-import { addSession, getSession, getSessions} from '../controllers/sessionsController';
-import { addVolunteer } from '../controllers/volunteerController';
+const express = require('express');
+const {addVolunteer,getVolunteers,updateVolunteer} = require('../controllers/volunteerController');
 
 const router = express.Router();
 
 router.post('/',addVolunteer);
-router.get('/')
+router.get('/',getVolunteers);
+router.put('/update/:id',updateVolunteer);
 
-export default router;
+module.exports = {router};
