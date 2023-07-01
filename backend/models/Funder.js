@@ -7,7 +7,7 @@ const FunderSchema = new Schema({
     email:{type:String, required:true},
 });
 
-const Funder = mongoose.model('Funder', FunderSchema);
+const Funder = new mongoose.model('Funder', FunderSchema);
 module.export = Funder;
 
 
