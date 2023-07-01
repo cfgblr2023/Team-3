@@ -17,7 +17,22 @@ const VolunteerSchema = new Schema({
         required: [true, 'Password is required!'],
         minlength: [8, 'The password should be minimum of 8 characters!']
     },
-    experience : Number,
+    interest:{
+        type:String,
+        required:true
+    },
+    gender:{
+        type: String,
+        required:true
+    },
+    age:{
+        type:Number,
+        required:true
+    },
+    occupation : {
+        type:String,
+        required:true        
+    },
     role : {
         type : String,
         default : "volunteer"

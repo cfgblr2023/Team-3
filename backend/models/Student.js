@@ -19,6 +19,26 @@ const StudentSchema = new Schema({
     role : {
         type : String,
         default : "student"
+    },
+    gender:{
+        type: String,
+        required:true
+    },
+    age:{
+        type:Number,
+        required:true
+    },
+    education:{
+        type:String,
+        required:true
+    },
+    interest:{
+        type:String,
+        required:true
+    },
+    occupation:{
+        type:String,
+        required:true
     }
 });
 
