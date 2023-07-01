@@ -1,0 +1,16 @@
+.heroSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://img.jagranjosh.com/images/2022/July/2972022/up-govt-bans-entry-of-school-students-in-malls-parks-restaurants-wearing.jpg");
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://img.jagranjosh.com/images/2022/July/2972022/up-govt-bans-entry-of-school-students-in-malls-parks-restaurants-wearing.jpg"); /* The least supported option. */
+}
+
+.cardSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    gap:3rem;
+}
