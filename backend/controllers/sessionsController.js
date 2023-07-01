@@ -27,5 +27,5 @@ export const getSession= async(req,res)=>{
 
 export const getSessions = async(req,res)=>{
     const Sessions = await Session.find({});
-    res.sedn(Sessions);
+    res.send(Sessions);
 };
