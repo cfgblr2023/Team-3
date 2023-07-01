@@ -1,4 +1,6 @@
 import React from 'react'
+
+const Home = () => {
 import CustomCard from '../components/CustomCard'
 import styles from './Home.module.css'
 export const Home = () => {
@@ -11,3 +13,5 @@ export const Home = () => {
     </div>
   )
 }
+
+export default Home
