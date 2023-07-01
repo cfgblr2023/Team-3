@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import StudentRegister from "./pages/StudentRegister";
+import {Home} from './pages/Home';
+import {StudentRegister} from "./pages/StudentRegister";
 import Navbar from './components/Navbar';
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/' element={<StudentRegister />} />
+          <Route path='/register' element={<StudentRegister />} />
         </Routes>
 
       </BrowserRouter>
