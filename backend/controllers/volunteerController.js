@@ -18,14 +18,13 @@ const getVolunteers = async(req,res)=>{
     res.send(Volunteers);
 };
 
-const updateVolunteer = function (req, res) {
-    Volunteer.findByIdAndUpdate(req.body.id, {$set:req.body}, function(err, result){
-        if(err){
-            res.status(404).json({message:err});
-        }
-        
-    });
-    res.status(201).json({message:"Success"});
-}
+const updateVolunteer = async function (req, res) {
+    try {
+        const updatedVolunteer = await Volunteer.findOneAndUpdate(req.body.id,  req.body , { new: true });
+        res.status(201).json({ message: "Success", volunteer: updatedVolunteer });
+    } catch (err) {
+        res.status(404).json({ message: err });
+    }
+};
 
 module.exports = {addVolunteer,getVolunteers,updateVolunteer};
