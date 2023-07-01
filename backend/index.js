@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const connectDB = require('./config/db')
-const sessionRoutes = require('./routes/sessionRoutes');
+// const sessionRoutes = require('./routes/sessionRoutes');
 const volunteerRoutes = require('./routes/volunteerRoutes');
+const studentRoutes = require('./routes/studentRoutes');
 
 connectDB();
 const app = express();
@@ -20,7 +21,7 @@ app.listen(PORT,()=>{
     console.log("server started");
 })
 
-app.use('/sessions',sessionRoutes);
+// app.use('/sessions',sessionRoutes);
 app.use('/volunteer',volunteerRoutes);
 app.use('/student',studentRoutes);
 // app.use('/')
