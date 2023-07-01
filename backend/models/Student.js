@@ -4,10 +4,21 @@ const Schema = mongoose.Schema;
 const StudentSchema = new Schema({
     name:{type:String,required:true},
     mobile:{type:Number, required:true},
-    email:{type:String, required:false},
+    email:{
+        type:String, 
+        required:false,
+        unique: true, 
+        lowercase: true, 
+    },
+    password : {
+        type : String,
+        required: [true, 'Password is required!'],
+        minlength: [8, 'The password should be minimum of 8 characters!'],
+    },
+    role:{
+        type:String,
+        default: "student"
+    }
 });
 
-const Student = mongoose.model('Student', StudentSchema);
-module.export = Student;
-
-
+module.exports = mongoose.model('Student', StudentSchema);

@@ -24,3 +24,8 @@ export const getSession= async(req,res)=>{
         res.status(404).json({ message: error.message });
     }
 };
+
+export const getSessions = async(req,res)=>{
+    const Sessions = await Session.find({});
+    res.sedn(Sessions);
+};
