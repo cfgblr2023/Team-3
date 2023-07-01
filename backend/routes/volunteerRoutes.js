@@ -7,4 +7,4 @@ router.post('/',addVolunteer);
 router.get('/',getVolunteers);
 router.put('/update/:id',updateVolunteer);
 
-module.exports = {router};
+module.exports = router;
