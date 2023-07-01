@@ -1,9 +1,9 @@
 const Volunteer = require('../models/Volunteer');
 
-export const addVolunteer = async(req,res)=>{
-    const {name,mobile,email} = req.body;
-    const newVolunteer = new Volunteer({name,mobile,email});
-
+const addVolunteer= async(req,res)=>{
+    const {name,mobile,email,password,interest,gender,age,occupation,role} = req.body;
+    const newVolunteer = new Volunteer({name,mobile,email,password,interest,gender,age,occupation,role});
+    
     try{
         await newVolunteer.save();
         return res.status(201).json(newVolunteer);
@@ -11,16 +11,21 @@ export const addVolunteer = async(req,res)=>{
     catch(error){
         return res.status(404).json({message:error.message});
     }
-
 };
 
-// export const getVolunteer= async(req,res)=>{
-//     const {id} = req.params;
+const getVolunteers = async(req,res)=>{
+    const Volunteers = await Volunteer.find({});
+    res.send(Volunteers);
+};
 
-//     try {
-//         const Volunteer = await Volunteer.findById(id);        
-//         res.status(200).json(Volunteer);
-//     } catch (error) {
-//         res.status(404).json({ message: error.message });
-//     }
-// };
+const updateVolunteer = function (req, res) {
+    Volunteer.findByIdAndUpdate(req.body.id, {$set:req.body}, function(err, result){
+        if(err){
+            res.status(404).json({message:err});
+        }
+        
+    });
+    res.status(201).json({message:"Success"});
+}
+
+module.exports = {addVolunteer,getVolunteers,updateVolunteer};
