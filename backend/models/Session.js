@@ -8,7 +8,8 @@ const SessionSchema = new Schema({
     date:{type:Date,required:true},
     duration:{type:Number,required:true},
     volunteerId:{type:mongoose.Schema.Types.ObjectId, ref:'Volunteer', required:true},
-    tags:{type:[String],required:true}
+    tags:{type:String,required:true},
+    link:{type:String,required:true}
 });
 
 const Session = mongoose.model('Session', SessionSchema);
