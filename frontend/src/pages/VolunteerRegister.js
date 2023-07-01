@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './StudentRegister.css';
+import './VolunteerRegister.css';
 
-function StudentRegister(){
-  
+function VolunteerRegister() {
     const [studentData, setStudentData] = useState({
         "name": "",
         "mobile":"",
@@ -19,10 +18,10 @@ function StudentRegister(){
     return (
       
       <Form className="form">
-        <div><h3 style={{textAlign: "center"}}>STUDENT REGISTRATION FORM</h3></div>
-         <Form.Group  className="mb-3" controlId="formBasicEmail" >
+        <div><h3 style={{textAlign: "center"}}>VOLUNTEER REGISTRATION FORM</h3></div>
+         <Form.Group  className="mb-3" controlId="formBasicEmail">
               <Form.Label >Name</Form.Label>
-              <Form.Control  type="text" placeholder="Enter name" name="name" onChange={handleChange} required/>
+              <Form.Control  type="text" placeholder="Enter name" name="name" onChange={handleChange}  required/>
               <Form.Text className="text-muted">
               </Form.Text>
           </Form.Group>
@@ -34,7 +33,7 @@ function StudentRegister(){
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} required />
+              <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange}  required/>
               <Form.Text className="text-muted">
               </Form.Text>
           </Form.Group>
@@ -43,8 +42,8 @@ function StudentRegister(){
               <Form.Control type="password" placeholder="Password" name="password"  required/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Education</Form.Label>
-              <Form.Control type="text" placeholder="Education" name="education" />
+              <Form.Label>Occupation</Form.Label>
+              <Form.Control type="text" placeholder="Occupation" name="occupation" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Interests</Form.Label>
@@ -64,4 +63,4 @@ function StudentRegister(){
       </Form>
   );
 }
-export default StudentRegister;
+export default VolunteerRegister;

@@ -1,17 +1,17 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './StudentRegister.css';
+import './FundRaiseForm.css';
 
-function StudentRegister(){
+function FundRaiseForm(){
   
     const [studentData, setStudentData] = useState({
         "name": "",
         "mobile":"",
         "email": "",
-        "password":"",
-        "passwordConfirm":"",
-        "passwordChangedAt":""
+        "amount":"",
+        
           })
     const handleChange = (e) => {
         setStudentData({ ...studentData, [e.target.name]: e.target.value })
@@ -19,7 +19,7 @@ function StudentRegister(){
     return (
       
       <Form className="form">
-        <div><h3 style={{textAlign: "center"}}>STUDENT REGISTRATION FORM</h3></div>
+        <div><h3 style={{textAlign: "center"}}>FUND FORM</h3></div>
          <Form.Group  className="mb-3" controlId="formBasicEmail" >
               <Form.Label >Name</Form.Label>
               <Form.Control  type="text" placeholder="Enter name" name="name" onChange={handleChange} required/>
@@ -38,30 +38,14 @@ function StudentRegister(){
               <Form.Text className="text-muted">
               </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" name="password"  required/>
-          </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Education</Form.Label>
-              <Form.Control type="text" placeholder="Education" name="education" />
+              <Form.Label>Amount</Form.Label>
+              <Form.Control type="number" placeholder="Amount" name="amount" />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Interests</Form.Label>
-              <Form.Control type="text" placeholder="Interests" name="interests" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Age</Form.Label>
-              <Form.Control type="range" placeholder="Age" name="age" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Gender</Form.Label>
-              <Form.Control type="text" placeholder="Gender" name="interes" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-              Submit
+          <Button variant="primary" type="submit" ><Link to='/fund'>Submit</Link>
+              
           </Button>
       </Form>
   );
 }
-export default StudentRegister;
+export default FundRaiseForm;
