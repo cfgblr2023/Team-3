@@ -1,0 +1,75 @@
+.donation-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1593113630400-ea4288922497?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    
+  }
+  .des{
+    text-align: center;
+    font-size:23px;
+    
+  }
+  
+  .form {
+    background-color: #b2c7c7;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight:bold;
+  }
+  
+  .discription {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  
+  
+  .payment {
+    text-align: center;
+  }
+  
+  #btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .btn:last-child {
+    margin-right: 0;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer-btn {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 480px) {
+    .form {
+      width: 90%;
+      max-width: 400px;
+    }
+  }
