@@ -1,0 +1,83 @@
+
+
+
+.jobs-page {
+    padding: 20px;
+  }
+  
+  .page-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .jobs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .job-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .job-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .job-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .job-link {
+    display: inline-block;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Custom colorful styles */
+  
+  .job-card:nth-child(1) {
+    background-color: #ffadad;
+  }
+  
+  .job-card:nth-child(2) {
+    background-color: #ffd6a5;
+  }
+  
+  .job-card:nth-child(3) {
+    background-color: #fdffb6;
+  }
+  
+  .job-card:nth-child(4) {
+    background-color: #caffbf;
+  }
+  
+  .job-card:nth-child(5) {
+    background-color: #9bf6ff;
+  }
+  
+  .job-card:nth-child(6) {
+    background-color: #a0c4ff;
+  }
+  
+  .job-card:nth-child(7) {
+    background-color: #bdb2ff;
+  }
+  
+  .job-card:nth-child(8) {
+    background-color: #ffc6ff;
+  }

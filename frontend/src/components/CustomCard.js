@@ -9,7 +9,7 @@ function CustomCard(props) {
         <Card.Text>
           {props.content}
         </Card.Text>
-        <Button variant="primary" href={props.link}>{props.button}</Button>
+        <Button variant="warning" href={props.link}>{props.button}</Button>
       </Card.Body>
     </Card>
   );

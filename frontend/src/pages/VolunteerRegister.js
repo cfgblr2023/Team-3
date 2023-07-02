@@ -1,62 +1,59 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './StudentRegister.css';
+import './VolunteerRegister.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+function VolunteerRegister() {
+    const [volunteerData, setVolunteerData] = useState({
+        "name": "",
+        "mobile":0,
+        "email": "",
+        "password":"",
+        "interest":"",
+        "gender":"",
+        "age":0,
+        "occupation":"",
+          })
+    const handleChange = (e) => {
+        setVolunteerData({ ...volunteerData, [e.target.name]: e.target.value })
+    }
+    const handleSubmit = async (e) =>{
+        e.preventDefault()
+        try{
+            const response = await axios.post("http://localhost:5000/volunteer",volunteerData)
+            if(response.status<400){
+                toast.success('Register Successful', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                setVolunteerData({
+                    "name": "",
+                    "mobile":0,
+                    "email": "",
+                    "password":"",
+                    "interest":"",
+                    "gender":"",
+                    "age":0,
+                    "occupation":"",
+                      })
+            }
 
-function StudentRegister(){
-        const [volunteerData, setVolunteerData] = useState({
-            "name": "",
-            "mobile":0,
-            "email": "",
-            "password":"",
-            "interest":"",
-            "gender":"",
-            "age":0,
-            "occupation":"",
-            "education":""
-        })
-        const handleChange = (e) => {
-            setVolunteerData({ ...volunteerData, [e.target.name]: e.target.value })
         }
-        const handleSubmit = async (e) =>{
-            e.preventDefault()
-            try{
-                const response = await axios.post("http://localhost:5000/student",volunteerData)
-                if(response.status<400){
-                    toast.success('Register Successful', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                        });
-                    setVolunteerData({
-                        "name": "",
-                        "mobile":0,
-                        "email": "",
-                        "password":"",
-                        "interest":"",
-                        "gender":"",
-                        "age":0,
-                        "occupation":"",
-                        "education":""
-                          })
-                }
-    
-            }
-            catch(err){
-                console.error(err)
-            }
-        }          
+        catch(err){
+            console.error(err)
+        }
+    }
     return (
       
       <Form className="form" onSubmit={handleSubmit}>
-        <div><h3 style={{textAlign: "center"}}>STUDENT REGISTRATION FORM</h3></div>
+        <div><h3 style={{textAlign: "center"}}>VOLUNTEER REGISTRATION FORM</h3></div>
          <Form.Group  className="mb-3" controlId="formBasicEmail">
               <Form.Label >Name</Form.Label>
               <Form.Control  type="text" placeholder="Enter name" name="name" onChange={(e)=>{
@@ -82,10 +79,6 @@ function StudentRegister(){
               <Form.Control type="password" placeholder="Password" name="password"  onChange={(e)=>{handleChange(e);}} value={volunteerData.password} required/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Education</Form.Label>
-              <Form.Control type="text" placeholder="Education" name="education" onChange={(e)=>{handleChange(e);}}  value={volunteerData.education}/>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Occupation</Form.Label>
               <Form.Control type="text" placeholder="Occupation" name="occupation"onChange={(e)=>{handleChange(e);}}  value={volunteerData.occupation}/>
           </Form.Group>
@@ -108,4 +101,4 @@ function StudentRegister(){
       </Form>
   );
 }
-export default StudentRegister;
+export default VolunteerRegister;
