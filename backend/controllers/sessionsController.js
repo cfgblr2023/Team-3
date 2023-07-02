@@ -1,8 +1,8 @@
 const Session = require('../models/Session');
 
 const addSession = async(req,res)=>{
-    const {name,description,date,duration,volunteeredId,tags,link} = req.body;
-    const newSession = new Session({name,description,date,duration,volunteerId,tags,link});
+    const {name,description,date,duration,tags,link} = req.body;
+    const newSession = new Session({name,description,date,duration,tags,link});
 
     try{
         await newSession.save();
