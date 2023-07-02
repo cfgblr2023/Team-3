@@ -13,8 +13,7 @@ function AddSession(){
             "date":"",
             "duration":"",
             "tag":"",
-            "link":"",
-            "volunteerId":getData.id
+            "link":""
         })
         const handleChange = (e) => {
             setSessionData({ ...sessionData, [e.target.name]: e.target.value })
