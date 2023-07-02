@@ -5,8 +5,8 @@ const Volunteer = require('./Volunteer')
 const SessionSchema = new Schema({
     name:{type:String,required:true},
     description:{type:String,required:true},
-    date:{type:Date,required:true},
-    duration:{type:Number,required:true},
+    date:{type:String,required:true},
+    duration:{type:String,required:true},
     tag:{type:String,required:true},
     link:{type:String,required:true}
 });
