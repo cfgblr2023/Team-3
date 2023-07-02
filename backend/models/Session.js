@@ -11,7 +11,7 @@ const SessionSchema = new Schema({
     link:{type:String,required:true}
 });
 
-const Session = mongoose.model('Session', SessionSchema);
+const Session = new mongoose.model('Session', SessionSchema);
 module.export = Session;
 
 
